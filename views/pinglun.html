@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>留言本</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .title {
+            width: 100%;
+            height: 80px;
+            font-size: 40px;
+            line-height: 80px;
+            text-align: center;
+            background-color: rgb(245, 222, 192);
+        }
+        
+        .pageChoice {
+            margin: 50px 0 50px 50px;
+        }
+        
+        .pageChoice span a {
+            text-decoration: none;
+            font-size: 30px;
+        }
+        
+        .pageName {
+            font-size: 50px;
+            display: inline-block;
+            color: rgb(102, 100, 100);
+        }
+        
+        .name,
+        .content {
+            margin: 20px 0 0 50px;
+            font-size: 20px;
+            line-height: 30px;
+        }
+        
+        .name input {
+            height: 30px;
+            width: 200px;
+        }
+        
+        .btn {
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            width: 70px;
+            height: 25px;
+            background-color: rgb(55, 177, 51);
+            color: #fff;
+            border-radius: 6px;
+            margin: 20px 0 0 50px;
+            border-style: none;
+        }
+        
+        .btn:hover {
+            background-color: rgb(36, 138, 32);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">留言本</div>
+    <div class="pageChoice">
+        <span><a href="/">首页 </a></span>
+        <div class="pageName">/ 留言页</div>
+    </div>
+    <form action="/pinglun" method="GET">
+        <div class="name">用户名称：<input type="text" required name="name" minlength="2" maxlength="8" placeholder="请输入您的名称"></div>
+        <div class="content">发表内容：<textarea name="content" minlength="2" maxlength="15" required cols="60" rows="3" placeholder="请输入留言"></textarea></div>
+        <button class="btn" type="submit">发表</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>留言本</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .title {
+            width: 100%;
+            height: 80px;
+            font-size: 40px;
+            line-height: 80px;
+            text-align: center;
+            background-color: rgb(245, 222, 192);
+        }
+        
+        .pageChoice {
+            margin: 50px 0 50px 50px;
+        }
+        
+        .pageChoice span a {
+            text-decoration: none;
+            font-size: 30px;
+        }
+        
+        .pageName {
+            font-size: 50px;
+            display: inline-block;
+            color: rgb(146, 144, 144);
+        }
+        
+        .btn {
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            width: 70px;
+            height: 25px;
+            background-color: rgb(55, 177, 51);
+            color: #fff;
+            border-radius: 6px;
+            margin: 20px 0 0 50px;
+            border-style: none;
+        }
+        
+        .btn:hover {
+            background-color: rgb(36, 138, 32);
+        }
+        
+        .items {
+            border: 1px solid rgb(219, 217, 217);
+            margin: 20px 50px 0 50px;
+        }
+        
+        .item {
+            font-size: 16px;
+            background-color: rgb(250, 250, 250);
+            padding: 5px 0 5px 20px;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .date {
+            float: right;
+            padding-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title">留言本</div>
+    <div class="pageChoice">
+        <div class="pageName">首页 / </div>
+        <span><a href="/post">留言页</a></span>
+    </div>
+    <a href="/post" class="btn">发留言</a>
+    <div class="items">
+        {{each comments}}
+        <div class="item">{{$value.name}}：{{$value.content}}<label class="date">{{$value.date}}</label></div>
+        {{/each}}
+    </div>
+</body>
+
+</html>
+
+<script src="../public/lib/js/template-web.js"></script>
